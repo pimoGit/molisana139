@@ -1,18 +1,16 @@
 // Header.jsx
+
+// importiamo componente Logo
+import Logo from "./Logo.jsx";
+// importiamo componente Logo
+import Navbar from "./Navbar.jsx";
+
+
 export default function Header() {
     return (
         <header>
-            <figure>
-                <img src="/logo.png" alt="Logo" />
-            </figure>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#" className="active">Prodotti</a></li>
-                    <li><a href="#">Chi Siamo</a></li>
-                    <li><a href="#">Contatti</a></li>
-                </ul>
-            </nav>
+            <Logo />
+            <Navbar />
         </header>
     );
 }
