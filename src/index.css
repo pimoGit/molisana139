@@ -55,9 +55,12 @@ ul li a {
     transition: background 0.4s;
 }
 
-ul li a.active,
-ul li a:hover {
+ul li a.active {
     background: lightblue;
+}
+
+ul li a:hover {
+    background-color: blueviolet;
 }
 
 

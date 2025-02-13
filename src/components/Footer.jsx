@@ -2,12 +2,12 @@
 // importiamo componente Logo
 import Logo from "./Logo.jsx";
 
-export default function Footer() {
+export default function Footer(props) {
     return (
         <footer className="container">
             <nav className="footer-nav">
                 <div className="footer-col">
-                    <Logo slogan="Molisana, pasata dal 1840." />
+                    <Logo slogan={props.slogan} />
                 </div>
                 <div className="footer-col">
                     <div>

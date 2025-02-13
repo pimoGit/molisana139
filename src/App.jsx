@@ -5,11 +5,14 @@ import Footer from "./components/Footer.jsx";
 // import './App.css'
 
 function App() {
+
+    const dataSlogan = 'Molisana, pasta sanissima!';
+
     return (
         <>
-            <Header />
+            <Header slogan={dataSlogan} />
             <Main />
-            <Footer />
+            <Footer slogan={dataSlogan} />
         </>
     )
 }

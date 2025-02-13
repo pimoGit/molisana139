@@ -6,10 +6,10 @@ import Logo from "./Logo.jsx";
 import Navbar from "./Navbar.jsx";
 
 
-export default function Header() {
+export default function Header(props) {
     return (
         <header>
-            <Logo />
+            <Logo slogan={props.slogan} />
             <Navbar />
         </header>
     );
