@@ -130,3 +130,40 @@ main {
 .prod-card img {
     display: block;
 }
+
+/* Componente Alert */
+.alert-container {
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-container ul {
+    display: block;
+}
+
+.alert {
+    padding: 1rem;
+    display: inline-block;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.alert.info {
+    border-color: blue;
+    background-color: lightblue;
+}
+
+.alert.success {
+    color: white;
+    border-color: green;
+    background-color: lightgreen;
+}
+
+.alert.error {
+    color: white;
+    border-color: darkred;
+    background-color: red;
+}
