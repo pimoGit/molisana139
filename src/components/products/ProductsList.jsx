@@ -91,11 +91,15 @@ export default function ProductsList() {
         },
     ];
 
+    function renderProducts() {
+        return products.map(product => <ProductCard key={product.id} productSrc={product.src} productTitle={product.title} />)
+    }
+
     return (
         <section id="products">
             <h2>Lista prodotti</h2>
             <div className="container card-container">
-                {products.map(product => <ProductCard key={product.id} productSrc={product.src} productTitle={product.title} />)}
+                {renderProducts()}
             </div>
         </section>
     );
