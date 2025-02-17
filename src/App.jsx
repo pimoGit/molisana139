@@ -2,6 +2,8 @@ import Header from "./components/Header.jsx";
 import Main from "./components/Main.jsx";
 import Footer from "./components/Footer.jsx";
 import Alert from "./components/Alert.jsx";
+import Counter from "./components/Counter.jsx";
+
 
 
 // import './App.css'
@@ -21,7 +23,7 @@ function App() {
                     <li>Messaggio di errore 3</li>
                 </ul>
             </Alert>
-
+            <Counter />
             <Main />
             <Footer slogan={dataSlogan} />
         </>
