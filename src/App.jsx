@@ -3,8 +3,8 @@ import Main from "./components/Main.jsx";
 import Footer from "./components/Footer.jsx";
 import Alert from "./components/Alert.jsx";
 import Counter from "./components/Counter.jsx";
-// import AccordionList from "./components/AccordionList.jsx";
-import AccordionList2 from "./components/accordionplus/AccordionList2.jsx";
+import AccordionList from "./components/AccordionList.jsx";
+// import AccordionList2 from "./components/accordionplus/AccordionList2.jsx";
 
 
 
@@ -27,8 +27,8 @@ function App() {
                 </ul>
             </Alert>
             <Counter />
-            {/* <AccordionList /> */}
-            <AccordionList2 />
+            <AccordionList />
+            {/* <AccordionList2 /> */}
             <Main />
             <Footer slogan={dataSlogan} />
         </>
