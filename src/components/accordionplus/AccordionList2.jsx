@@ -1,4 +1,6 @@
-import Accordion from "./Accordion.jsx";
+import Accordion2 from "./Accordion2.jsx";
+import { useState } from 'react';
+
 
 
 // data accordion
@@ -30,14 +32,19 @@ const faqs = [
 ];
 
 // componente
-export default function AccordionList() {
+export default function AccordionList2() {
+
+    const [activeAccordion, setActiveAccordion] = useState(null);
+
 
     function renderAccordion() {
         return faqs.map(faq => {
-            return <Accordion
+            return <Accordion2
                 key={faq.id}
                 titolo={faq.title}
                 contenuto={faq.content}
+                isOpen={activeAccordion === faq.id}
+                onToggle={() => setActiveAccordion(faq.id)}
             />
         });
     }
