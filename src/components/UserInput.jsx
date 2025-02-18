@@ -9,6 +9,8 @@ export default function UserInput() {
     const handleSubmit = event => {
         event.preventDefault();
         console.log('Il nome inviato è:' + firstName)
+        console.log(event);
+
     }
 
     return (

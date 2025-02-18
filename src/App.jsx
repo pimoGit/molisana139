@@ -5,7 +5,9 @@ import Footer from "./components/Footer.jsx";
 // import Counter from "./components/Counter.jsx";
 // import AccordionList from "./components/AccordionList.jsx";
 // import AccordionList2 from "./components/accordionplus/AccordionList2.jsx";
-import UserInput from "./components/UserInput.jsx";
+// import UserInput from "./components/UserInput.jsx";
+import TodoList from "./components/TodoList.jsx";
+
 
 
 
@@ -31,7 +33,8 @@ function App() {
             {/* <Counter /> */}
             {/* <AccordionList /> */}
             {/* <AccordionList2 /> */}
-            <UserInput />
+            {/* <UserInput /> */}
+            <TodoList />
             <Main />
             <Footer slogan={dataSlogan} />
         </>

@@ -247,3 +247,12 @@ main {
     font-size: 1.4rem;
     cursor: pointer;
 }
+
+/* TODOLIST */
+.todolist {
+    display: block;
+}
+
+.todolist li {
+    list-style-type: circle;
+}
