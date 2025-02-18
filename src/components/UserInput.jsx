@@ -6,11 +6,19 @@ export default function UserInput() {
 
     const [firstName, setFirstName] = useState('Marco');
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log('Il nome inviato è:' + firstName)
+    }
+
     return (
         <>
-            <input type="text" value={firstName}
-                onChange={e => { setFirstName(e.target.value) }}
-            />
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={firstName}
+                    onChange={event => { setFirstName(event.target.value) }}
+                />
+                <button>Invia</button>
+            </form >
             <p>Il tuo nome è {firstName}</p>
         </>
     )
