@@ -20,6 +20,8 @@ export default function TodoList() {
         // versione corretta con creazione nuovo array
         const updatedTasks = [...tasks, newTask];
         setTasks(updatedTasks);
+        // azzeriamo il valore di newtask
+        setNewTask('');
     }
 
     // funzione di CB di cancellazione elemento dalla todo
@@ -30,10 +32,8 @@ export default function TodoList() {
         setTasks(updatedTasks);
     }
 
-
     return (
         <>
-            {/* form di gestione todo */}
             <form onSubmit={addTask}>
                 <input type="text" value={newTask}
                     onChange={event => { setNewTask(event.target.value) }}
@@ -41,19 +41,20 @@ export default function TodoList() {
                 <button>Invia</button>
             </form >
 
-            {/* output todo */}
-            <ul className='todolist'>
-                {tasks.map((task, i) => (
-                    <li key={i}>
-                        {task}
-                        {/* bottone di eliminazione elemento */}
-                        <button onClick={() => removeTask(i)}>
-                            Elimina
-                        </button>
-                    </li>
-                ))}
-            </ul>
-
+            {tasks.length === 0 ?
+                <h2>La tua lista è vuota</h2>
+                :
+                <ul className='todolist'>
+                    {tasks.map((task, i) => (
+                        <li key={i}>
+                            {task}
+                            <button onClick={() => removeTask(i)}>
+                                Elimina
+                            </button>
+                        </li>
+                    ))}
+                </ul >
+            }
         </>
     )
 
