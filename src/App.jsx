@@ -7,6 +7,7 @@ import Footer from "./components/Footer.jsx";
 // import AccordionList2 from "./components/accordionplus/AccordionList2.jsx";
 // import UserInput from "./components/UserInput.jsx";
 import TodoList from "./components/TodoList.jsx";
+import PizzasForm from "./components/PizzasForm.jsx";
 
 
 
@@ -34,7 +35,8 @@ function App() {
             {/* <AccordionList /> */}
             {/* <AccordionList2 /> */}
             {/* <UserInput /> */}
-            <TodoList />
+            {/* <TodoList /> */}
+            <PizzasForm />
             <Main />
             <Footer slogan={dataSlogan} />
         </>

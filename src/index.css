@@ -256,3 +256,18 @@ main {
 .todolist li {
     list-style-type: circle;
 }
+
+/* PIZZE */
+.pizzaItem {
+    margin: 10px;
+    border: solid 2px #ccc;
+}
+
+.pizzaItem img {
+    height: 200px;
+}
+
+.price {
+    display: block;
+
+}
