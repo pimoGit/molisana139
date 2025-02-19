@@ -78,6 +78,16 @@ const PizzasForm = () => {
         setFormData(initialFormData);
     }
 
+    // funzione gestione cancellazione pizza
+    function deletePizza(idPizza) {
+        // creiamo il nuovo array da sostituire allo state menu
+        const updatePizzas = menu.filter((pizza) => {
+            return pizza.id !== idPizza;
+        })
+        // lo sostituiamo
+        setMenu(updatePizzas);
+    }
+
     return (
         <>
             <h1>questo e il form delle pizze</h1>
@@ -135,6 +145,10 @@ const PizzasForm = () => {
                         <p>{pizza.description}</p>
                         <span className='price'>{pizza.price} €</span>
                         <span className='available'>{pizza.available ? "pizza disponibile" : "pizza non disponibile"}</span>
+                        <br />
+                        <button onClick={() => deletePizza(pizza.id)}>
+                            Cancella
+                        </button>
                     </div>
                 ))
 
