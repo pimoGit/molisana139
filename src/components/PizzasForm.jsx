@@ -73,7 +73,11 @@ const PizzasForm = () => {
     // funzione di gestione dell'invio dell'intero form (tuue le info dei vari campi)
     function handleSubmit(e) {
         e.preventDefault();
-        setMenu((currentMenu) => [...currentMenu, { id: currentMenu[currentMenu.length - 1].id + 1, ...formData }]);
+        setMenu((currentMenu) => [...currentMenu, {
+            id:
+                currentMenu.length === 0 ? 1 : currentMenu[currentMenu.length - 1].id + 1,
+            ...formData
+        }]);
         // resetto il form
         setFormData(initialFormData);
     }
