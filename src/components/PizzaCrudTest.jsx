@@ -9,7 +9,7 @@ const initialFormData = {
     ingredients: [],
 };
 
-const PizzasForm = () => {
+const PizzaCrudTest = () => {
 
     // utilizzo dello useState per la gestione dei data (array degli oggetti pizza)
     const [menu, setMenu] = useState([]);
@@ -46,16 +46,18 @@ const PizzasForm = () => {
     // funzione di gestione dell'invio dell'intero form (tuue le info dei vari campi)
     function handleSubmit(e) {
         e.preventDefault();
-        // chiamata verso la API in post con invio dati nuova pizza
-        axios.post("http://localhost:3000/pizzas", formData)
-            .then(res => {
-                // console.log(res.data);
-                // uso la risposta dell'API per creare il nuovo array menu
-                setMenu((currentMenu) => [...currentMenu, res.data])
-            }
-            )
-            .catch(err => console.log(err))
 
+        // invio dati BE
+        axios.post("http://localhost:3000/pizzas", formData)
+            .then((res) =>
+                // setMenu(res.data)
+                setMenu((menu) => [...menu, res.data])
+                // console.log(res.data)
+            )
+            .catch(err => {
+                console.log(err)
+            })
+        // parte FE
         // setMenu((currentMenu) => [...currentMenu, {
         //     id:
         //         currentMenu.length === 0 ? 1 : currentMenu[currentMenu.length - 1].id + 1,
@@ -67,12 +69,21 @@ const PizzasForm = () => {
 
     // funzione gestione cancellazione pizza
     function deletePizza(idPizza) {
-        // creiamo il nuovo array da sostituire allo state menu
+
         const updatePizzas = menu.filter((pizza) => {
             return pizza.id !== idPizza;
         })
-        // lo sostituiamo
-        setMenu(updatePizzas);
+        // parte completa BE
+        axios.delete(`http://localhost:3000/pizzas/${idPizza}`)
+            .then((res) =>
+                // console.log(res)
+                setMenu(updatePizzas)
+            )
+            .catch(err => console.log(err))
+
+
+
+
     }
 
     return (
@@ -99,7 +110,7 @@ const PizzasForm = () => {
                     value={formData.image}
                     placeholder='Imagine pizza'
                 />
-                {/* valori ingredienti */}
+                {/* valore ingredienti */}
                 <input
                     type="text"
                     name="ingredients"
@@ -134,4 +145,4 @@ const PizzasForm = () => {
 
 }
 
-export default PizzasForm
+export default PizzaCrudTest

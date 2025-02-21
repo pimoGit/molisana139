@@ -8,6 +8,7 @@ import Footer from "./components/Footer.jsx";
 // import UserInput from "./components/UserInput.jsx";
 import TodoList from "./components/TodoList.jsx";
 import PizzasForm from "./components/PizzasForm.jsx";
+import PizzaCrudTest from "./components/PizzaCrudTest.jsx";
 
 
 
@@ -37,7 +38,7 @@ function App() {
             {/* <UserInput /> */}
             {/* <TodoList /> */}
             <PizzasForm />
-            <Main />
+            {/* <Main /> */}
             <Footer slogan={dataSlogan} />
         </>
     )
