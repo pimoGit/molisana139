@@ -71,8 +71,17 @@ const PizzasForm = () => {
         const updatePizzas = menu.filter((pizza) => {
             return pizza.id !== idPizza;
         })
-        // lo sostituiamo
-        setMenu(updatePizzas);
+
+        // chiamata ad API sulla rotta di delete
+        axios.delete(`http://localhost:3000/pizzas/${idPizza}`)
+            .then(res =>
+                console.log(res),
+                // lo sostituiamo anche nel FE
+                setMenu(updatePizzas)
+            )
+            .catch(err => console.log(err))
+
+
     }
 
     return (
