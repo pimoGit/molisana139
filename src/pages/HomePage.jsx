@@ -1,15 +1,10 @@
-// importiamo componenti di template
-import Header from "./../components/Header";
-import Footer from "./../components/Footer";
-
-
-
 export default function HomePage() {
     return (
         <>
-            <Header />
             <h2>Ciao sono la Home page</h2>
-            <Footer />
+            <p>
+                Lorem HOME ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis necessitatibus porro veniam sapiente eveniet laboriosam pariatur nulla cum ad sit facere neque quidem atque, odio ipsa voluptatum expedita dignissimos?
+            </p>
         </>
     );
 }
