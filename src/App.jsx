@@ -1,14 +1,12 @@
-import Header from "./components/Header.jsx";
-import Main from "./components/Main.jsx";
-import Footer from "./components/Footer.jsx";
-// import Alert from "./components/Alert.jsx";
-// import Counter from "./components/Counter.jsx";
-// import AccordionList from "./components/AccordionList.jsx";
-// import AccordionList2 from "./components/accordionplus/AccordionList2.jsx";
-// import UserInput from "./components/UserInput.jsx";
-import TodoList from "./components/TodoList.jsx";
-import PizzasForm from "./components/PizzasForm.jsx";
-import PizzaCrudTest from "./components/PizzaCrudTest.jsx";
+// import degli elementi della libreria di gestione delle rotte
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Pages
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactsPage from "./pages/ContactsPage";
+
+
 
 
 
@@ -22,25 +20,13 @@ function App() {
     const dataSlogan = 'Molisana, pasta sanissima!';
 
     return (
-        <>
-            <Header slogan={dataSlogan} />
-            {/* componente con children props */}
-            {/* <Alert type="error">
-                <ul>
-                    <li>Messaggio di errore 1</li>
-                    <li>Messaggio di errore 2</li>
-                    <li>Messaggio di errore 3</li>
-                </ul>
-            </Alert> */}
-            {/* <Counter /> */}
-            {/* <AccordionList /> */}
-            {/* <AccordionList2 /> */}
-            {/* <UserInput /> */}
-            {/* <TodoList /> */}
-            <PizzasForm />
-            {/* <Main /> */}
-            <Footer slogan={dataSlogan} />
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contacts" element={<ContactsPage />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 

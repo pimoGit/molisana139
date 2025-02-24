@@ -10,10 +10,9 @@ export default function Header(props) {
 
     // dati ricavati per la gestione dei link della Navbar
     const links = [
-        { id: 1, text: 'Home', url: '#', current: false },
-        { id: 2, text: 'Prodotti', url: '#', current: true },
-        { id: 3, text: 'Chi Siamo', url: '#', current: false },
-        { id: 4, text: 'Contatti', url: '#', current: false },
+        { id: 1, text: 'Home', url: '/', current: true },
+        { id: 2, text: 'About', url: '/about', current: false },
+        { id: 3, text: 'Contacts', url: '/contacts', current: false },
     ];
 
     return (

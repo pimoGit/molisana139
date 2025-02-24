@@ -1,3 +1,6 @@
+import { Link, NavLink } from "react-router-dom";
+
+
 export default function Navbar(props) {
 
     // const links = props.linksProp;
@@ -9,9 +12,9 @@ export default function Navbar(props) {
             <ul>
                 {props.linksProp.map((link) => (
                     <li key={link.id}>
-                        <a href={link.url} className={link.current ? 'active' : ''}>
+                        <NavLink to={link.url}>
                             {link.text}
-                        </a>
+                        </NavLink>
                     </li>
                 ))}
             </ul>
