@@ -8,6 +8,8 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactsPage from "./pages/ContactsPage";
+import PizzasPage from "./pages/PizzasPage";
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactsPage />} />
+                    <Route path="/pizze" element={<PizzasPage />} />
                 </Route>
             </Routes>
         </BrowserRouter >

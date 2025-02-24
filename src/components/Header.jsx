@@ -13,6 +13,7 @@ export default function Header(props) {
         { id: 1, text: 'Home', url: '/', current: true },
         { id: 2, text: 'About', url: '/about', current: false },
         { id: 3, text: 'Contacts', url: '/contacts', current: false },
+        { id: 4, text: 'Pizze', url: '/pizze', current: false },
     ];
 
     return (
