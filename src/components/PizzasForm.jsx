@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// import navigate per navigazione programmatica dopo invio form
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
@@ -12,7 +14,7 @@ const initialFormData = {
 const PizzasForm = () => {
 
     // utilizzo dello useState per la gestione dei data (array degli oggetti pizza)
-    const [menu, setMenu] = useState([]);
+    // const [menu, setMenu] = useState([]);
     // state per la gestione delle informazioni raccolte dai campi del form
     const [formData, setFormData] = useState(initialFormData);
 
@@ -28,6 +30,9 @@ const PizzasForm = () => {
         }));
     }
 
+    // utilizzo del navigate
+    const navigate = useNavigate();
+
     // funzione di gestione dell'invio dell'intero form (tuue le info dei vari campi)
     function handleSubmit(e) {
         e.preventDefault();
@@ -36,7 +41,8 @@ const PizzasForm = () => {
             .then(res => {
                 // console.log(res.data);
                 // uso la risposta dell'API per creare il nuovo array menu
-                setMenu((currentMenu) => [...currentMenu, res.data])
+                // setMenu((currentMenu) => [...currentMenu, res.data])
+                navigate("/pizze");
             }
             )
             .catch(err => console.log(err))
