@@ -1,12 +1,12 @@
 // importiamo il componente delle pizze
-import PizzasList from "./../components/PizzasList";
+import PizzasForm from "./../components/PizzasForm";
 
 
-export default function PizzasPage() {
+export default function PizzasCreatePage() {
     return (
         <>
             <h2>Ciao sono la pagine delle Pizze</h2>
-            <PizzasList />
+            <PizzasForm />
         </>
     );
 }

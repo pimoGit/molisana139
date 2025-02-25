@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from "axios";
 
 
@@ -15,21 +15,6 @@ const PizzasForm = () => {
     const [menu, setMenu] = useState([]);
     // state per la gestione delle informazioni raccolte dai campi del form
     const [formData, setFormData] = useState(initialFormData);
-
-
-    // funzione di gestione chiamata all'API
-    function fetchPizzas() {
-        axios.get("http://localhost:3000/pizzas")
-            .then((res) =>
-                setMenu(res.data)
-                // console.log(res.data)
-            )
-    }
-
-    // richiamo la funzione di richiesta dati al caricamento del componente
-    // fetchPizzas();
-    // Solo al primo rendering
-    useEffect(fetchPizzas, []);
 
     // funzione di gestione delle info dei campi
     function handleFormData(e) {
@@ -65,31 +50,10 @@ const PizzasForm = () => {
         setFormData(initialFormData);
     }
 
-    // funzione gestione cancellazione pizza
-    function deletePizza(idPizza) {
-        // creiamo il nuovo array da sostituire allo state menu
-        const updatePizzas = menu.filter((pizza) => {
-            return pizza.id !== idPizza;
-        })
-
-        // chiamata ad API sulla rotta di delete
-        axios.delete(`http://localhost:3000/pizzas/${idPizza}`)
-            .then(res =>
-                console.log(res),
-                // lo sostituiamo anche nel FE
-                setMenu(updatePizzas)
-            )
-            .catch(err => console.log(err))
-
-
-    }
 
     return (
         <>
             <h1>questo e il form delle pizze</h1>
-
-            {/* bottone di invio richiesta alla API pizzas */}
-            {/* <button onClick={fetchPizzas}>Carica Pizze</button> */}
 
             <form id='formpizza' action="#" onSubmit={handleSubmit}>
                 {/* valore nome pizza */}
@@ -119,25 +83,6 @@ const PizzasForm = () => {
                 {/* bottone di invio info */}
                 <button>Aggiungi</button>
             </form>
-
-            {
-                menu.map((pizza) => (
-                    <div className='pizzaItem' key={pizza.id}>
-                        <h2>{pizza.name}</h2>
-                        <img src={pizza.image} alt={pizza.name} />
-                        <p>{pizza.ingredients.join(", ")}</p>
-                        {/* <p>{pizza.description}</p>
-                        <span className='price'>{pizza.price} €</span>
-                        <span className='available'>{pizza.available ? "pizza disponibile" : "pizza non disponibile"}</span> */}
-                        <br />
-                        <button onClick={() => deletePizza(pizza.id)}>
-                            Cancella
-                        </button>
-                    </div>
-                ))
-
-
-            }
         </>
     )
 

@@ -14,6 +14,7 @@ export default function Header(props) {
         { id: 2, text: 'About', url: '/about', current: false },
         { id: 3, text: 'Contacts', url: '/contacts', current: false },
         { id: 4, text: 'Pizze', url: '/pizze', current: false },
+        { id: 5, text: 'Add Pizza', url: '/pizze/create', current: false },
     ];
 
     return (

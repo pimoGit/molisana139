@@ -267,6 +267,12 @@ main {
     height: 200px;
 }
 
+.pizzaItem a {
+    color: red;
+    display: block;
+    margin: 5px 0;
+}
+
 .price {
     display: block;
 
