@@ -11,6 +11,9 @@ import ContactsPage from "./pages/ContactsPage";
 import PizzasPage from "./pages/PizzasPage";
 import PizzasCreatePage from "./pages/PizzasCreatePage";
 import PizzasDetailPage from "./pages/PizzasDetailPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+
 
 
 
@@ -44,6 +47,8 @@ function App() {
                         <Route path="create" element={<PizzasCreatePage />} />
                         <Route path=":id" element={<PizzasDetailPage />} />
                     </Route>
+                    {/* rotta del 404 per rotte non previste */}
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>
         </BrowserRouter >
