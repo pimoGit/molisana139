@@ -1,5 +1,5 @@
 // import degli elementi della libreria di gestione delle rotte
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Layout
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -29,6 +29,7 @@ function App() {
 
     const dataSlogan = 'Molisana, pasta sanissima!';
 
+
     return (
         <BrowserRouter>
             <Routes>
@@ -36,6 +37,8 @@ function App() {
                     <Route index element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactsPage />} />
+                    {/* es. di redirect */}
+                    <Route path="/lepizze" element={<Navigate to="/pizze" />} />
                     <Route path="/pizze">
                         <Route index element={<PizzasPage />} />
                         <Route path="create" element={<PizzasCreatePage />} />
