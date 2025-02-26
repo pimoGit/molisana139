@@ -2,11 +2,11 @@
 import PizzasListUser from "./../components/PizzasListUser";
 
 
-export default function HomePage(props) {
+export default function HomePage() {
     return (
         <>
             <h2>Ciao sono la Home page</h2>
-            <PizzasListUser menuPropProps={props.menuProp} />
+            <PizzasListUser />
         </>
     );
 }

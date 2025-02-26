@@ -1,6 +1,10 @@
 // import degli elementi della libreria di gestione delle rotte
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// importiamo il contesto creato (Global)
+import GlobalContext from './contexts/GlobalContext';
+
+
 // gestione dati pizze per listato
 import { useState, useEffect } from 'react';
 import axios from "axios";
@@ -49,24 +53,26 @@ function App() {
 
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<DefaultLayout />} >
-                    <Route index element={<HomePage menuProp={menu} />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/contacts" element={<ContactsPage />} />
-                    {/* es. di redirect */}
-                    <Route path="/lepizze" element={<Navigate to="/pizze" />} />
-                    <Route path="/pizze">
-                        <Route index element={<PizzasPage />} />
-                        <Route path="create" element={<PizzasCreatePage />} />
-                        <Route path=":id" element={<PizzasDetailPage />} />
+        <GlobalContext.Provider value={{ menu }}>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<DefaultLayout />} >
+                        <Route index element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/contacts" element={<ContactsPage />} />
+                        {/* es. di redirect */}
+                        <Route path="/lepizze" element={<Navigate to="/pizze" />} />
+                        <Route path="/pizze">
+                            <Route index element={<PizzasPage />} />
+                            <Route path="create" element={<PizzasCreatePage />} />
+                            <Route path=":id" element={<PizzasDetailPage />} />
+                        </Route>
+                        {/* rotta del 404 per rotte non previste */}
+                        <Route path="*" element={<NotFoundPage />} />
                     </Route>
-                    {/* rotta del 404 per rotte non previste */}
-                    <Route path="*" element={<NotFoundPage />} />
-                </Route>
-            </Routes>
-        </BrowserRouter >
+                </Routes>
+            </BrowserRouter >
+        </GlobalContext.Provider>
     )
 }
 
