@@ -1,10 +1,12 @@
-export default function HomePage() {
+// importiamo il componente di listato Utente finale
+import PizzasListUser from "./../components/PizzasListUser";
+
+
+export default function HomePage(props) {
     return (
         <>
             <h2>Ciao sono la Home page</h2>
-            <p>
-                Lorem HOME ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis necessitatibus porro veniam sapiente eveniet laboriosam pariatur nulla cum ad sit facere neque quidem atque, odio ipsa voluptatum expedita dignissimos?
-            </p>
+            <PizzasListUser menuPropProps={props.menuProp} />
         </>
     );
 }

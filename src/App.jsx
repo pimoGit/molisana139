@@ -1,6 +1,10 @@
 // import degli elementi della libreria di gestione delle rotte
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// gestione dati pizze per listato
+import { useState, useEffect } from 'react';
+import axios from "axios";
+
 // Layout
 import DefaultLayout from "./layouts/DefaultLayout";
 
@@ -19,25 +23,36 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 
 
-
-
-
-
-
-
-
 // import './App.css'
 
 function App() {
 
     const dataSlogan = 'Molisana, pasta sanissima!';
 
+    // utilizzo dello useState per la gestione dei data (array degli oggetti pizza)
+    const [menu, setMenu] = useState([]);
+
+
+    // funzione di gestione chiamata all'API
+    function fetchPizzas() {
+        axios.get("http://localhost:3000/pizzas")
+            .then((res) =>
+                setMenu(res.data)
+                // console.log(res.data)
+            )
+    }
+
+    // richiamo la funzione di richiesta dati al caricamento del componente
+    // fetchPizzas();
+    // Solo al primo rendering
+    useEffect(fetchPizzas, []);
+
 
     return (
         <BrowserRouter>
             <Routes>
                 <Route element={<DefaultLayout />} >
-                    <Route index element={<HomePage />} />
+                    <Route index element={<HomePage menuProp={menu} />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactsPage />} />
                     {/* es. di redirect */}
